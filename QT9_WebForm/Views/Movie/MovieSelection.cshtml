@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Selected Movie</h1>
+<div class="two-col">
+    <div class="col1">
+        <label for="movieId">Movie ID</label>
+        <input id="movieId" type="text" />
+    </div>
+    <div class="col2">
+        <label for="movieTitle">Movie Title</label>
+        <input id="movieTitle" type="text" />
+    </div>
+</div>
+<div class="two-col">
+    <div class="col1">
+        <label for="movieRating">Movie Rating</label>
+        <input id="movieRating" type="text" />
+    </div>
+    <div class="col2">
+        <label for="movieReleaseYear">Movie Release Year</label>
+        <input id="movieReleaseYear" type="text" />
+    </div>
+</div>
+<style>
+    .two-col {
+        overflow: hidden; /* Makes this div contain its floats */
+    }
+
+        .two-col .col1,
+        .two-col .col2 {
+            width: 49%;
+        }
+
+        .two-col .col1 {
+            float: left;
+        }
+
+        .two-col .col2 {
+            float: right;
+        }
+
+        .two-col label {
+            display: block;
+        }
+</style>

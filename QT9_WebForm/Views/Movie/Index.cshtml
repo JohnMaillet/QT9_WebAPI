@@ -1,0 +1,23 @@
+﻿@model List<MovieViewModel>
+@{
+    Layout = "_Layout";
+}
+
+@Html.Partial("MovieSelection")
+@Html.Partial("MovieGrid", Model)
+
+<script>
+    function UpdateTextBoxes(e) {
+        console.log(e);
+        var title = document.getElementsByName('[' + e.value + '].MovieTitle')[0].value;
+        var id = document.getElementsByName('[' + e.value + '].MovieID')[0].value
+        var rating = document.getElementsByName('[' + e.value + '].MovieRating')[0].value
+        var release = document.getElementsByName('[' + e.value + '].ReleaseYear')[0].value
+
+        document.getElementById("movieTitle").value = title;
+        document.getElementById("movieId").value = id;
+        document.getElementById("movieRating").value = rating;
+        document.getElementById("movieReleaseYear").value = release;
+    }
+</script>
+

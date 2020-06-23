@@ -1,0 +1,50 @@
+﻿@model List<MovieViewModel>
+
+<h1>Movie List</h1>
+<div style="height:250px;overflow:auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ElementAt(0).Selected)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ElementAt(0).MovieID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ElementAt(0).MovieTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ElementAt(0).MovieRating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ElementAt(0).ReleaseYear)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count(); i++)
+            {
+                <tr>
+                    <td>
+                        @Html.RadioButton("Selection", Model[i].MovieID, new { onclick = "UpdateTextBoxes(this)" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].MovieID, new { @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].MovieTitle, new { @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].MovieRating, new { @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].ReleaseYear, new { @readonly = "readonly" })
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
